@@ -124,6 +124,6 @@ mmdet/.mim
 *.sh~
 
 # my ignore
-*.jpg
-*.png
-*.tif
+# *.jpg
+# *.png
+# *.tif
