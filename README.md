@@ -41,7 +41,7 @@ python setup.py develop
 
 ```shell script
 1. Config file: plane_cfg/GF2/whole_ISCL/config.py;
-2. Refined Instance Switching (ReIS): mmdet/datasets/pipelines/instance_switch2.py
+2. Refined Instance Switching (ReIS): mmdet/datasets/pipelines/instance_switch_by_class_serving.py
 3. Dataset configuration file: mmdet/datasets/plane_serving_is.py
 ```
 
