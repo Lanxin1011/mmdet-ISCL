@@ -11,7 +11,7 @@ ISCL is a augmentation method that can be added to most two-stage detectors to b
 
 ## Installation and Get Started
 
-Required enviroments: 
+**Required enviroments:** 
 
 Note that this implementation is based on MMDetection v2.18
 
@@ -21,8 +21,7 @@ Note that this implementation is based on MMDetection v2.18
 * CUDA 9.2+
 * [MMCV](https://mmcv.readthedocs.io/en/latest/#installation)
 
-
-Install:
+**Install:**
 
 Note that this repository is based on the [MMDetection](https://github.com/open-mmlab/mmdetection). Assume that your environment has satisfied the above requirements, please follow the following steps for installation.
 
@@ -32,8 +31,25 @@ pip install -r requirements/build.txt
 python setup.py develop
 ```
 
+**How to run the full code for ISCL in this paper?**
+
+**Step 1.** Download GF or FAIR1M dataset, and of course you can use your own datasets. 
+
+**Step 2.** Select a config file from 'plane_cfg' folder. (Note that 'plane_cfg' has a variety of config files with different configurations, among them 'plane_cfg/GF2/whole_ISCL/config.py' and 'plane_cfg/fair1m/whole_ISCL/config.py' are the config files of the complete ISCL on two datasets.)
+
+**Step 3.** Change the file paths in the following files to the corresponding paths in your directory. *For example, I want to run the full code of ISCL with GF dataset, then I will change the file paths in:* 
+
+```python
+1. Config file: plane_cfg/GF2/whole_ISCL/config.py;
+2. Refined Instance Switching (ReIS): mmdet/datasets/pipelines/instance_switch2.py
+3. Dataset configuration file: mmdet/datasets/plane_serving_is.py
+```
+
+
+
 ## Main Results
-Table 1. **HBB** detection results on GF dataset. **Training Set:** GF train-val set, **Validation Set:** GF test set, 120 epochs. [GF](https://github.com/Lanxin1011/mmdet-ISCL/data/GF)
+
+Table 1. **HBB** detection results on GF dataset. **Training Set:** GF train-val set, **Validation Set:** GF test set, 120 epochs. 
 Method | Backbone | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | mAP<sub>50</sub>
 --- |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
 Faster R-CNN | R-50 | 33.33 | 54.43 | 9.55 | 32.33 | 32.80 | 38.90 | 57.10 | 57.00 | 60.30 | 37.98 | 54.23
@@ -43,7 +59,7 @@ DetectoRS | R-50 |34.10|56.62|6.33|32.85|31.70|36.52|54.95|61.93|64.20|39.25|53.
 Faster R-CNN + ISCL | R-50 |33.65|70.18|19.90|39.48|44.90|55.88|71.60|76.15|66.30|46.98|**62.78 (+8.55)** 
 
 
-Table 2. **OBB** detection results on GF dataset. **Training Set:** GAOFEN train-val set, **Validation Set:** GAOFEN test set, 120 epochs. [GF](https://github.com/Lanxin1011/mmdet-ISCL/data/GF)
+Table 2. **OBB** detection results on GF dataset. **Training Set:** GF train-val set, **Validation Set:** GF test set, 120 epochs. 
 Method | Backbone | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | mAP<sub>50</sub>
 --- |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
 S2A-Net | R-50 |32.70|54.10|5.90|43.20|38.50|55.40|56.40|68.30|60.20|40.40|62.66

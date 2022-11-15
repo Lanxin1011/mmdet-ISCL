@@ -243,7 +243,7 @@ checkpoint_config = dict(interval=60)
 log_config = dict(interval=10, hooks=[dict(type='TextLoggerHook')])
 dist_params = dict(backend='nccl')
 log_level = 'INFO'
-load_from = '/data2/zlx/plane_ckpt/decoupled/epoch_20.pth'  # '/data2/zlx/plane_ckpt/decoupled/epoch_20.pth'  # '/mapai/haowenguo/ckpt/plane_ckpt/decoupled/epoch_20.pth'  # '/mapai/haowenguo/ckpt/plane_ckpt/epoch_24_faster.pth'
+load_from = 'plane_ckpt/faster_r50_fpn_epoch_20.pth'  # '/data2/zlx/plane_ckpt/decoupled/epoch_20.pth'  # '/mapai/haowenguo/ckpt/plane_ckpt/decoupled/epoch_20.pth'  # '/mapai/haowenguo/ckpt/plane_ckpt/epoch_24_faster.pth'
 resume_from = None
 workflow = [('train', 1)]
 work_dir = './ckpt/'
