@@ -39,7 +39,7 @@ python setup.py develop
 
 **Step 3.** Change the file paths in the following files to the corresponding paths in your directory. *For example, I want to run the full code of ISCL with GF dataset, then I will change the file paths in:* 
 
-```python
+```shell script
 1. Config file: plane_cfg/GF2/whole_ISCL/config.py;
 2. Refined Instance Switching (ReIS): mmdet/datasets/pipelines/instance_switch2.py
 3. Dataset configuration file: mmdet/datasets/plane_serving_is.py
