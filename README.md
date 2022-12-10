@@ -37,10 +37,12 @@ python setup.py develop
 
 **Step 2.** Select a config file from 'plane_cfg' folder. (Note that 'plane_cfg' has a variety of config files with different configurations, among them 'plane_cfg/GF2/whole_ISCL/config.py' and 'plane_cfg/fair1m/whole_ISCL/config.py' are the config files of the complete ISCL on two datasets.)
 
+**Step 3.** Download the pretrained model ([faster_r50_fpn_epoch_20.pth](https://pan.baidu.com/s/1cOotFbWaZnbdL9Wf5nTGIQ), code: nh3d) which has been pretrained on GF-RarePlanes dataset and put it under the 'plane_ckpt' folder.
+
 **Step 3.** Change the file paths in the following files to the corresponding paths in your directory. *For example, I want to run the full code of ISCL with GF dataset, then I will change the file paths in:* 
 
 ```shell script
-1. Config file: plane_cfg/GF2/whole_ISCL/config.py;
+1. Config file: plane_cfg/GF2/whole_ISCL/config.py
 2. Refined Instance Switching (ReIS): mmdet/datasets/pipelines/instance_switch_by_class_serving.py
 3. Dataset configuration file: mmdet/datasets/plane_serving_is.py
 ```
@@ -79,9 +81,11 @@ Below are HBB detection visualizations on both GF and FAIR1M datasets. Note that
 If you find this work helpful,please consider citing:
 ```bibtex
 @article{zeng2022instance,
-  title={Instance Switching-based Contrastive Learning for Fine-grained Airplane Detection},
+  title={Instance Switching-Based Contrastive Learning for Fine-Grained Airplane Detection},
   author={Zeng, Lanxin and Guo, Haowen and Yang, Wen and Yu, Huai and Yu, Lei and Zhang, Peng and Zou, Tongyuan},
   journal={IEEE Transactions on Geoscience and Remote Sensing},
+  volume={60},
+  pages={1--16},
   year={2022},
   publisher={IEEE}
 }
